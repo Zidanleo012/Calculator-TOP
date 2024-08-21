@@ -4,13 +4,21 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url(aerial-view-wooden-table-photography-hobby-concept_53876-12011-transformed.avif);
+    background-size: cover;
+}
+
 #calculator {
-    width: 400px;
-    height: 85vh;
-    background-color: cadetblue;
-    margin: 10vh auto 0;
+    display: flex;
+    flex-direction: column;
+    width: 420px;
+    height: 90vh;
+    background-color: rgb(34, 36, 36);
+    margin: 5vh auto 0;
     border: solid 5px black;
     border-radius: 10px;
+    padding: 10px;
 }
 
 #display-wrapper {
@@ -24,7 +32,7 @@
     display: flex;
     justify-content: end;
     align-items: center;
-    background-color: red;
+    background-color: rgb(152, 202, 198);
     width: 95%;
     height: 90%;
     border-radius: 10px;
@@ -32,43 +40,54 @@
 }
 
 #display-text {
-    font-size: 40px;
+    font-size: 45px;
+    font-weight: 500;
 }
 
 #button-container {
     justify-content: space-between;
     height: 393px;
+    margin-top: 20px;
+}
+
+#button-container button {
+    font-size: 30px;
+    font-weight: 500;
 }
 
 #numButton {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: 3;
 }
 
 .flex {
     display: flex;
+    flex: 1;
 }
 
-/* #reset-and-percent {
-} */
+.gap {
+    gap: 5px;
+}
 
-
-
-.operand {
+.operand > button,
+#reset-and-percent > button {
     width: 40px;
-    height: 40px;
+    height: auto;
     flex: 1
 }
 
-/* #reset-and-percent {
-} */
+#zero-operand {
+    flex: 35%;
+}
 
 .op-button {
     flex-direction: column;
 }
 
-.op-item {
-    width: 40px;
-    height: 40px;
+.op-button > button {
+    width: auto;
+    height: auto;
+    flex: 1
 }
+
