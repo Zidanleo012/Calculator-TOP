@@ -14,39 +14,39 @@
         <div id="display-wrapper">
             <div id="display"><span id="display-text">1234567890</span></div>
         </div>
-        <div id="button-container" class="flex">
-            <div id="numButton">
-                <div id="reset-and-percent" class="flex">
-                    <button class="operand" id="reset"></button>
-                    <button class="operand" id="sign"></button>
-                    <button class="operand"></button>
+        <div id="button-container" class="flex gap">
+            <div id="numButton" class="gap">
+                <div id="reset-and-percent" class="flex gap">
+                    <button>C</button>
+                    <button>-/+</button>
+                    <button>%</button>
                 </div>
-                <div id="sevenToNine" class="flex">
-                    <button class="operand"></button>
-                    <button class="operand"></button>
-                    <button class="operand"></button>
+                <div id="sevenToNine" class="operand flex gap">
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
                 </div>
-                <div id="fourToSix" class="flex">
-                    <button class="operand"></button>
-                    <button class="operand"></button>
-                    <button class="operand"></button>
+                <div id="fourToSix" class="operand flex gap">
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
                 </div>
-                <div id="oneToThree" class="flex">
-                    <button class="operand"></button>
-                    <button class="operand"></button>
-                    <button class="operand"></button>
+                <div id="oneToThree" class="operand flex gap">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
                 </div>
-                <div id="zeroAndDecimal" class="flex">
-                    <button class="operand"></button>
-                    <button class="operand"></button>
+                <div id="zeroAndDecimal" class="operand flex gap">
+                    <button id="zero-operand">0</button>
+                    <button>.</button>
                 </div>
             </div>
-            <div class="op-button flex">
-                <button id="div" class="op-item"></button>
-                <button id="mul" class="op-item"></button>
-                <button id="sub" class="op-item"></button>
-                <button id="add" class="op-item"></button>
-                <button id="operate" class="op-item"></button>
+            <div class="op-button flex gap">
+                <button id="div">/</button>
+                <button id="mul">*</button>
+                <button id="sub">-</button>
+                <button id="add">+</button>
+                <button id="operate">=</button>
             </div>
         </div>
     </div>
