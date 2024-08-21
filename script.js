@@ -45,10 +45,13 @@ let secondNum = 0;
 let operator = '';
 
 const operands = document.querySelectorAll('.operand>button');
+const opAndCal = document.querySelectorAll('.op-button>button');
+const resetAndErase = document.querySelectorAll('#reset-and-percent>button')
 let display = document.querySelector('#display-text');
 let secondDisplay = document.querySelector('.second-display');
 let opDisplay = document.querySelector('#op-display');
-const opAndCal = document.querySelectorAll('.op-button>button');
+console.log(resetAndErase)
+
 
 operands.forEach(item => {
     item.addEventListener('click', (e) => {
@@ -73,5 +76,33 @@ opAndCal.forEach(item => {
         operator = e.target.value;
         opDisplay.textContent = e.target.value;
         console.log(firstNum, operator, secondNum, checkNaN(firstNum))
+    })
+})
+
+console.log(!display.textContent.includes('-'))
+resetAndErase.forEach(item => {
+    item.addEventListener('click', e => {
+        let disp = display.textContent
+        console.log(display)
+        switch(e.target.id) {
+            case 'reset':
+                firstNum = 0;
+                secondNum = 0;
+                display.textContent = '';
+                secondDisplay.textContent = '';
+                opDisplay.textContent = '';
+                operator = '';
+                break;
+            case 'sign':
+                if(!disp.includes('-')) {
+                    display.textContent = '-'.concat(disp)
+                } else {
+                    display.textContent = disp.slice(1);
+                }
+                break;
+            case 'erase':
+                display.textContent = disp.slice(0, -1)
+                break;
+        }
     })
 })
