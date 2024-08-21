@@ -12,7 +12,8 @@
 <body>
     <div id="calculator">
         <div id="display-wrapper">
-            <div id="display"><span id="display-text">1234567890</span></div>
+            <div id="display"><span id="display-text"></span></div>
+            <div class="second-display"><span id="op-display"></span></div>
         </div>
         <div id="button-container" class="flex gap">
             <div id="numButton" class="gap">
@@ -22,31 +23,31 @@
                     <button>%</button>
                 </div>
                 <div id="sevenToNine" class="operand flex gap">
-                    <button>7</button>
-                    <button>8</button>
-                    <button>9</button>
+                    <button value="7">7</button>
+                    <button value="8">8</button>
+                    <button value="9">9</button>
                 </div>
                 <div id="fourToSix" class="operand flex gap">
-                    <button>4</button>
-                    <button>5</button>
-                    <button>6</button>
+                    <button value="4">4</button>
+                    <button value="5">5</button>
+                    <button value="6">6</button>
                 </div>
                 <div id="oneToThree" class="operand flex gap">
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
+                    <button value="1">1</button>
+                    <button value="2">2</button>
+                    <button value="3">3</button>
                 </div>
                 <div id="zeroAndDecimal" class="operand flex gap">
-                    <button id="zero-operand">0</button>
-                    <button>.</button>
+                    <button id="zero-operand" value="0">0</button>
+                    <button value=".">.</button>
                 </div>
             </div>
             <div class="op-button flex gap">
-                <button id="div">/</button>
-                <button id="mul">*</button>
-                <button id="sub">-</button>
-                <button id="add">+</button>
-                <button id="operate">=</button>
+                <button id="div" value="/">/</button>
+                <button id="mul" value="*">*</button>
+                <button id="sub" value="-">-</button>
+                <button id="add" value="+">+</button>
+                <button id="operate" value="=">=</button>
             </div>
         </div>
     </div>
