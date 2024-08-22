@@ -103,6 +103,7 @@ body {
 .op-button > button {
     width: auto;
     height: auto;
-    flex: 1
+    flex: 1;
+    background-color: yellow;
 }
 
