@@ -40,13 +40,21 @@ function checkNaN(number) {
     return false;
 }
 
+function decimalSwitch() {
+    if (display.textContent.includes('.')) decimal.disabled = true;
+    else decimal.disabled = false;
+}
+
+// function ()
+
 let firstNum = 0;
 let secondNum = 0;
 let operator = '';
 
 const operands = document.querySelectorAll('.operand>button');
 const opAndCal = document.querySelectorAll('.op-button>button');
-const resetAndErase = document.querySelectorAll('#reset-and-percent>button')
+const resetAndErase = document.querySelectorAll('#reset-and-percent>button');
+const decimal = document.querySelector('#decimal');
 let display = document.querySelector('#display-text');
 let secondDisplay = document.querySelector('.second-display');
 let opDisplay = document.querySelector('#op-display');
@@ -57,6 +65,7 @@ operands.forEach(item => {
     item.addEventListener('click', (e) => {
         if (display.textContent.length < 15) {
             display.textContent += e.target.value;
+            decimalSwitch()
         }
     })
 })
@@ -66,13 +75,13 @@ opAndCal.forEach(item => {
         if (!firstNum) {
             firstNum = secondDisplay.textContent = parseFloat(display.textContent)
             display.textContent = ''
-        } else if (e.target.id === 'operate'){
+        } else if (e.target.id === 'operate') {
             secondNum = parseFloat(display.textContent)
-            checkNaN(secondNum)
             display.textContent = operate(operator, firstNum, secondNum)
             console.log(display.textContent)
             reset()
-        } 
+        }
+        decimalSwitch()
         operator = e.target.value;
         opDisplay.textContent = e.target.value;
         console.log(firstNum, operator, secondNum, checkNaN(firstNum))
@@ -83,8 +92,8 @@ console.log(!display.textContent.includes('-'))
 resetAndErase.forEach(item => {
     item.addEventListener('click', e => {
         let disp = display.textContent
-        console.log(display)
-        switch(e.target.id) {
+        decimalSwitch()
+        switch (e.target.id) {
             case 'reset':
                 firstNum = 0;
                 secondNum = 0;
@@ -94,7 +103,7 @@ resetAndErase.forEach(item => {
                 operator = '';
                 break;
             case 'sign':
-                if(!disp.includes('-')) {
+                if (!disp.includes('-')) {
                     display.textContent = '-'.concat(disp)
                 } else {
                     display.textContent = disp.slice(1);
@@ -103,6 +112,7 @@ resetAndErase.forEach(item => {
             case 'erase':
                 display.textContent = disp.slice(0, -1)
                 break;
+
         }
     })
 })
